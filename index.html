@@ -78,6 +78,22 @@
     .price-hint { color: var(--muted); font-size: 0.92rem; }
     .price-hint .stars { color: var(--accent2); font-weight: 700; }
 
+    /* Hero 精简价格条 */
+    .hero-price { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-top: 1.4rem; }
+    .hero-price .hp { background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: 0.9rem 1rem; }
+    .hero-price .hp.hot { border: 1.5px solid var(--accent); background: linear-gradient(160deg, rgba(20,184,166,0.1), var(--surface)); }
+    .hero-price .hp-name { font-weight: 700; font-size: 0.82rem; color: var(--ink); }
+    .hero-price .hp-amt { font-family: var(--font-head); font-size: 1.35rem; color: var(--accent); margin: 0.3rem 0; }
+    .hero-price .hp-amt .cur { font-size: 0.82rem; }
+    .hero-price .hp-amt small { color: var(--muted); font-size: 0.72rem; font-family: var(--font-body); font-weight: 400; }
+    .hero-price .hp-detail { color: var(--muted); font-size: 0.75rem; line-height: 1.5; }
+    .hero-price .hp-detail b { color: var(--accent2); }
+    .hero-price .hp-cta { display: inline-block; margin-top: 0.55rem; padding: 0.35rem 0.95rem; border-radius: 20px;
+      font-weight: 700; font-size: 0.78rem; text-decoration: none; transition: 0.2s; }
+    .hero-price .hp .hp-cta { background: var(--accent); color: #062019; }
+    .hero-price .hp.hot .hp-cta { background: var(--accent2); color: #130a00; }
+    .hero-price .hp-cta:hover { transform: translateY(-1px); opacity: 0.92; }
+
     /* 公式 */
     .formula-zone { text-align: center; padding: 4rem 0; }
     .formula-label { color: var(--muted); letter-spacing: 0.14em; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 1.2rem; }
@@ -245,6 +261,7 @@
 
     @media (max-width: 860px) {
       .hero-title { font-size: 2rem; }
+      .hero-price { grid-template-columns: 1fr; }
       .grid2, .why { grid-template-columns: 1fr; }
       .layer { grid-template-columns: 1fr; gap: 0.5rem; }
       .method, .feature-grid, .price-grid { grid-template-columns: 1fr 1fr; }
@@ -278,7 +295,25 @@
         <a class="btn" href="#pricing">了解课程与价格</a>
         <a class="btn" href="#trial" style="background:linear-gradient(135deg,var(--accent2),#d98f2b);color:#221300">先上 9.9 体验课</a>
       </div>
-      <div class="price-hint" style="margin-top:.8rem">体验课 <span class="stars">¥9.9</span> · 正课早鸟价 <span class="stars">¥499</span> · 2026-12-31 前有效</div>
+      <div class="hero-price">
+        <div class="hp">
+          <div class="hp-name">体验课</div>
+          <div class="hp-amt"><span class="cur">¥</span>9.9</div>
+          <div class="hp-detail">文字+图片轻量入门<br>补差价可升级正课</div>
+          <a class="hp-cta" href="https://f.wps.cn/g/XzUORsVY/" target="_blank" rel="noopener nofollow">登记体验课</a>
+        </div>
+        <div class="hp hot">
+          <div class="hp-name">正课 · 全套</div>
+          <div class="hp-amt"><span class="cur">¥</span>499<small> / 早鸟 · 原价¥599</small></div>
+          <div class="hp-detail">5阶段全套，不拆层<br>星球会员早鸟 <b>¥399</b></div>
+          <a class="hp-cta" href="https://f.wps.cn/g/a2MJOqEf/" target="_blank" rel="noopener nofollow">登记正课</a>
+        </div>
+        <div class="hp">
+          <div class="hp-name">观看有效期</div>
+          <div class="hp-amt" style="font-size:1.05rem">一年</div>
+          <div class="hp-detail">购买后一年内有效<br>含持续更新内容回传</div>
+        </div>
+      </div>
     </div>
   </header>
 
